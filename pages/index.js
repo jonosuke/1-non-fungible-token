@@ -171,8 +171,8 @@ export default function Home() {
         <hr className='border-[#38E8C6]' />
         <div className='flex  flex-col items-center justify-center pt-10'>
           {!user.loggedIn ? "" : <div className='flex space-x-5'>
-            <button onClick={setupCollection} className="border rounded-lg py-2 text-sm px-5 border-[#38E8C6] text-blue-900 font-bold bg-[#38E8C6]">Setup Collection</button>
-            <button onClick={getNFTs} className="border rounded-lg py-2 text-sm px-5 border-[#38E8C6] text-blue-900 font-bold bg-[#38E8C6]">Get NFTs</button>
+            <button onClick={setupCollection} className="border rounded-lg py-2 text-sm px-5 border-[#38E8C6] text-blue-900 font-bold bg-[#38E8C6]">コレクションを作る</button>
+            <button onClick={getNFTs} className="border rounded-lg py-2 text-sm px-5 border-[#38E8C6] text-blue-900 font-bold bg-[#38E8C6]">NFTを表示</button>
           </div>}
           <div className='pt-20'>
             {show == false ? <div className='flex flex-col justify-center items-center'>
@@ -188,7 +188,7 @@ export default function Home() {
                     </div>
                     <p className='text-gray-300 text-md'>{nft.description}</p>
                     <div className='flex justify-center py-2'>
-                      <img src={`https://cloudflare-ipfs.com/ipfs/${nft.thumbnail.url}`} width={150} />
+                      <img src={`${nft.thumbnail.url}`} width={150} />
                     </div>
                     <div className='flex flex-col pt-2'>
                       <input className="px-4 mb-1 py-1 focus:outline-none focus:border-[#38E8C6] focus:border-2 bg-green-100 border rounded-lg border-[#38E8C6]" type="text" onChange={e => setRecipient(e.target.value)} />

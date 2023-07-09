@@ -3,16 +3,16 @@ const { serverAuthorization } = require("./auth/authorization.js");
 require("../flow/config.js");
 
 async function mintNFTs(recipient) {
-  const names = ["Education", "Building", "Governance"];
+  const names = ["TOBIRA NEKO #00055-1", "TOBIRA NEKO #00055-2", "TOBIRA NEKO #00055-3"];
   const descriptions = [
-    "This is the logo of the Education Guild",
-    "This is the logo of the Building Guild",
-    "This is the logo of the Governance Guild"
+    "赤猫",
+    "黒猫",
+    "緑猫"
   ];
   const thumbnails = [
-    "QmYVKNWdm2961QtHz721tdA8dvBT116eT2DtATsX53Kt28",
-    "QmPkJbnJSt3ZkHuGAnHyHCAhWVrneRrK6VHMjgu5oPGnoq",
-    "QmcpmzEDmZtP37csyNaYaxzhoMQmmUrQsihE3x2XGKsg1Z"
+    "55-1.png",
+    "55-2.png",
+    "55-3.png"
   ];
 
   try {
