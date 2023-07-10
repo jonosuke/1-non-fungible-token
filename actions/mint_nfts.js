@@ -6,8 +6,8 @@ async function mintNFTs(recipient) {
   const names = ["TOBIRA NEKO #00055-1", "TOBIRA NEKO #00055-2", "TOBIRA NEKO #00055-3"];
   const descriptions = [
     "赤猫",
-    "黒猫",
-    "緑猫"
+    "緑猫",
+    "黒猫"
   ];
   const thumbnails = [
     "55-1.png",
