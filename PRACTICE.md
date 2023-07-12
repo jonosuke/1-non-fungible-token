@@ -47,7 +47,7 @@ https://github.com/jonosuke/1-non-fungible-token
 
 ターミナルかPowerShellで下記を実行
 ```
-cd 1-non-fungible-token # ZIPを展開した場合は 「cd 1-non-fungible-token-main」
+cd (gitを実行した場所)/1-non-fungible-token # ZIPを展開した場合は 「cd (ZIPを展開した場所)/1-non-fungible-token-main」
 npm install
 npm run dev
 ```
@@ -55,21 +55,21 @@ npm run dev
 ### Flowエミュレーターを起動
 新しく別のターミナルかPowerShellを起動して下記を実行
 ```
-cd 1-non-fungible-token # ZIPを展開した場合は 「cd 1-non-fungible-token-main」
+cd (gitを実行した場所)/1-non-fungible-token # ZIPを展開した場合は 「cd (ZIPを展開した場所)/1-non-fungible-token-main」
 flow emulator start -v
 ```
 
 ### ウォレットを起動
 新しく別のターミナルかPowerShellを起動して下記を実行
 ```
-cd 1-non-fungible-token # ZIPを展開した場合は 「cd 1-non-fungible-token-main」
+cd (gitを実行した場所)/1-non-fungible-token # ZIPを展開した場合は 「cd (ZIPを展開した場所)/1-non-fungible-token-main」
 flow dev-wallet
 ```
 
 ### エミュレーターに勉強会用のプログラムを反映
 新しく別のターミナルかPowerShellを起動して下記を実行
 ```
-cd 1-non-fungible-token # ZIPを展開した場合は 「cd 1-non-fungible-token-main」
+cd (gitを実行した場所)/1-non-fungible-token # ZIPを展開した場合は 「cd (ZIPを展開した場所)/1-non-fungible-token-main」
 flow project deploy
 ```
 flow/cadenceフォルダにあるプログラムを修正した場合は、その都度`flow project deploy`を実行してエミュレーターに反映させてください。
@@ -88,7 +88,7 @@ NFTを管理するために、コレクションというものを作ります�
 
 新しく別のターミナルかPowerShellを起動して下記を実行して下さい。
 ```
-cd 1-non-fungible-token # ZIPを展開した場合は 「cd 1-non-fungible-token-main」
+cd (gitを実行した場所)/1-non-fungible-token # ZIPを展開した場合は 「cd (ZIPを展開した場所)/1-non-fungible-token-main」
 npm run mint 0xf8d6e0586b0a20c7
 ```
 0xf8d6e0586b0a20c7はユーザIDみたいなものです。ブラウザの中央上に「Address」として表示されています。
@@ -144,9 +144,8 @@ Account AにNFTを送ります。
 10:47PM DBG EVT [5bbda4] A.f8d6e0586b0a20c7.ExampleNFT.Deposit: 0xd14feabab497c973922d5941e172fc738e37820ecdc74e4bf395e3a243061d3b
 10:47PM DBG 📦 Block #9 committed                         blockHeight=9 blockID=80809695385e82cc4fe029ddbd70a2ef2d18ba6293ca33aa65109d0ecd19522c
 ```
-最後の行にあるblockIDの値をコピーして、下記のコマンドを実行します。blockIDは人によって違うので、自分のログの値を使ってください。
+最後の行にあるblockIDの値をコピーして、下記のコマンドを実行します。勉強会用のプログラムがあるフォルダの中で実行しないといけない事に注意してください。また、blockIDは人によって違うので、自分のログの値を使ってください。
 ```
-cd 1-non-fungible-token # ZIPを展開した場合は 「cd 1-non-fungible-token-main」
 flow blocks get 80809695385e82cc4fe029ddbd70a2ef2d18ba6293ca33aa65109d0ecd19522c --include transactions
 ```
 下記のようなブロックの情報が表示されます。情報の中身は人によって違うので、一例と思ってください。
@@ -165,9 +164,8 @@ Total Collections       1
 ### 取引の情報の表示
 次に、このブロックに記録されている取引の情報を表示してみましょう。
 
-「Transaction 0」の値をコピーして、下記のコマンドを実行します。「Transaction 0」の値は人によって違うので、自分のログの値を使ってください。
+「Transaction 0」の値をコピーして、下記のコマンドを実行します。勉強会用のプログラムがあるフォルダの中で実行しないといけない事に注意してください。また、「Transaction 0」の値は人によって違うので、自分のログの値を使ってください。
 ```
-cd 1-non-fungible-token # ZIPを展開した場合は 「cd 1-non-fungible-token-main」
 flow transactions get 5bbda4983d374c525caaa325499e4efd42849e0a5c8c3202a2087a6bd96d0257 --include code
 ```
 下記のような取引の情報が表示されます。
@@ -189,6 +187,7 @@ No Payload Signatures
 Envelope Signature 0: f8d6e0586b0a20c7
 Signatures (minimized, use --include signatures)
 
+
 Events:          
     Index       0
     Type        A.f8d6e0586b0a20c7.ExampleNFT.Withdraw
@@ -208,9 +207,8 @@ Events:
 Withdrawが引き出しで、Depositが預け入れです。0xf8d6e0586b0a20c7(元のアカウント)から引き出されて、0x179b6b1cb6755e31(Account A)に預け入れられていることがわかります。
 
 ### ブロックを遡る
-ブロック情報にある「Parent ID」が、一つ前のブロックのIDです。このIDを使って、一つ前のブロックの情報を表示してみましょう。
+ブロック情報にある「Parent ID」が、一つ前のブロックのIDです。このIDを使って、一つ前のブロックの情報を表示してみましょう(勉強会用のプログラムがあるフォルダの中で実行しないといけない事に注意してください)。
 ```
-cd 1-non-fungible-token # ZIPを展開した場合は 「cd 1-non-fungible-token-main」
 flow blocks get 496ce37ba5d1a3438afe519c5ae564fbc8252a8bb14c94fd1cfc19f6132afee7 --include transactions
 ```
 下記のようなブロックの情報が表示されます。
@@ -226,9 +224,8 @@ Total Collections       1
     Collection 0:       c73a82d170f6d77480328659888867768ca2d2d6875cd81c0e434a6d3631c1c5
          Transaction 0: e511153bfe23392842fd907cfe8d284f91f16bf997b15cb1979b5d0577589e4a
 ```
-取引の情報を表示してみましょう。
+取引の情報を表示してみましょう。勉強会用のプログラムがあるフォルダの中で実行しないといけない事に注意してください。
 ```
-cd 1-non-fungible-token # ZIPを展開した場合は 「cd 1-non-fungible-token-main」
 flow transactions get e511153bfe23392842fd907cfe8d284f91f16bf997b15cb1979b5d0577589e4a --include code
 ```
 下記のような取引の情報が表示されます。ブロックの履歴には全ての操作が残るので、人によって残っている履歴が違います。あくまで例として見て下さい。
@@ -279,9 +276,8 @@ Code
 10:46PM DBG EVT [05f9cc] A.f8d6e0586b0a20c7.ExampleNFT.Deposit: 0xa8ab29c2eab0408d760a264b1fbabc46dd1ee5d1ab7d79c6d201ad6ea28dc1a8
 10:46PM DBG 📦 Block #6 committed                         blockHeight=6 blockID=762cdfaafe36cf663d240260a7f554527d59f279d6c9433594b18b0dc4bcc928
 ```
-このログは、最初にNFTをミントしたときのログです。取引の情報を表示してみましょう。
+このログは、最初にNFTをミントしたときのログです。取引の情報を表示してみましょう。勉強会用のプログラムがあるフォルダの中で実行しないといけない事に注意してください。
 ```
-cd 1-non-fungible-token # ZIPを展開した場合は 「cd 1-non-fungible-token-main」
 flow transactions get 05f9ccc603738dcee25ffcb22d12c9ab69f334b20359e0e4b4c131b8df5b9843 --include code
 ```
 下記のような取引の情報が表示されます。
