@@ -40,6 +40,8 @@ https://github.com/jonosuke/1-non-fungible-token
 
 ![](img/download-zip.png)
 
+この後の作業は、基本的に全て1-non-fungible-tokenフォルダ(ZIPを展開した場合は1-non-fungible-token-mainフォルダ)の中で行います。
+
 ## エミューレーターの起動
 ### 勉強会用のアプリを起動
 
@@ -49,7 +51,6 @@ cd 1-non-fungible-token # ZIPを展開した場合は 「cd 1-non-fungible-token
 npm install
 npm run dev
 ```
-この後の作業は、基本的に全て1-non-fungible-tokenフォルダ(ZIPを展開した場合は1-non-fungible-token-mainフォルダ)の中で行います。
 
 ### Flowエミュレーターを起動
 新しく別のターミナルかPowerShellを起動して下記を実行
