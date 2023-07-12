@@ -49,6 +49,7 @@ cd 1-non-fungible-token # ZIPを展開した場合は 「cd 1-non-fungible-token
 npm install
 npm run dev
 ```
+この後の作業は、基本的に全て1-non-fungible-tokenフォルダ(ZIPを展開した場合は1-non-fungible-token-mainフォルダ)の中で行います。
 
 ### Flowエミュレーターを起動
 新しく別のターミナルかPowerShellを起動して下記を実行
@@ -70,7 +71,7 @@ flow dev-wallet
 cd 1-non-fungible-token # ZIPを展開した場合は 「cd 1-non-fungible-token-main」
 flow project deploy
 ```
-flow/cadenceディレクトリにあるプログラムを修正した場合は、その都度`flow project deploy`を実行してエミュレーターに反映させてください。
+flow/cadenceフォルダにあるプログラムを修正した場合は、その都度`flow project deploy`を実行してエミュレーターに反映させてください。
 
 ## コレクションの作成
 NFTを管理するために、コレクションというものを作ります。コレクションはNFTの種類毎に作る必要があります。
