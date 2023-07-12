@@ -26,7 +26,7 @@ https://nodejs.org/dist/latest-v16.x/node-v16.20.1-x86.msi
 ### Flow CLIのインストール
 https://developers.flow.com/tooling/flow-cli/install
 
-1. `PowerShell`で検索して起動
+1. `PowerShell`を起動
 2. `iex "& { $(irm 'https://raw.githubusercontent.com/onflow/flow-cli/master/install.ps1') }"
    `を実行
 
